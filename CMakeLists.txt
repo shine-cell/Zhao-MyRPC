@@ -18,7 +18,7 @@ include_directories(${PROJECT_SOURCE_DIR}/example)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 #在子目录下寻找makefile文件
-#src包含了myrpc框架的所有代码
+#src包含了myrpc框架下的所有代码
 add_subdirectory(src)
 
 #example包含了myrpc框架使用的示例代码
