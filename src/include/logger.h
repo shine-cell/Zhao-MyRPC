@@ -35,10 +35,9 @@ private:
         logger.StLogLevel(INFO);                        \
         char c[1024] = {0};                             \
         snprintf(c, 1024, logmsgformat, ##__VA_ARGS__); \
-    \ //##__VA_ARGS__代表可变参的参数列表
-logger.Log(c);
-}
-while (0)
+        \ 
+        logger.Log(c);                                  \
+    } while (0)
 
 #define LOG_ERR(logmsgformat, ...)                      \
     do                                                  \

@@ -61,7 +61,7 @@ void RpcProvider::Run()
     server.setThreadNum(4);
 
     // 把当前rpc节点上要发布的服务全部注册在zk上，让rpc client可以从zk上发现服务
-    // session的timeout默认为30s，zkclient的网络I/O线程1/3的timeout内不发送心跳则丢弃此节点
+    // session的timeout默认为30s，zkclient的网络I/O线程1/3的timeout内不发送心跳(ping消息)则丢弃此节点
     ZkClient zkCli;
     zkCli.Start(); // 链接zkserver
     // 将已经注册进哈希表里面的所有服务都注册到zookeeper里面
