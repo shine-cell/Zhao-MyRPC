@@ -43,6 +43,7 @@ void RpcProvider::NotifyService(google::protobuf::Service *service)
 // 启动rpc服务节点，开始提供rpc远程网络调用服务
 void RpcProvider::Run()
 {
+    // 如果要根据不同的服务到不同的端口ip去拿，可以更改下面load的参数，或者用一个哈希表存下来
     // 获取启动tcpserver相关的参数
     std::string ip = myrpcApplication::GetInstance().GetConfig().Load("rpcserverip");
     uint16_t port = atoi(myrpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
